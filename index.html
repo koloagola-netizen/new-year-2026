@@ -79,7 +79,7 @@ audio { display: none; }
 
 <button id="startBtn">Запустити свято 🎆</button>
 
-<div id="content" style="display:none;">
+<div id="content">
   <h1 id="title">🎉 З Новим роком 2026! 🎉</h1>
   <p id="message">Нехай цей рік принесе мир, щастя і багато приводів радіти ✨</p>
   <!-- YouTube плеєр (Last Christmas) -->
@@ -94,11 +94,19 @@ const content = document.getElementById('content');
 const title = document.getElementById('title');
 const message = document.getElementById('message');
 const music = document.getElementById('bgMusic');
+<script>
+  const startBtn = document.getElementById('startBtn');
+  const content = document.getElementById('content');
+  const music = document.getElementById('music');
 
+  // ⬅️ ОСЬ ЦЕ ДОДАЙ
+  content.style.display = 'none';
 startBtn.addEventListener('click', () => {
   music.play();
   startBtn.style.display = 'none';
   content.style.display = 'block';
+  music.src += "?autoplay=1";
+});
   
   // Текст з анімацією
   title.style.opacity = 1;
