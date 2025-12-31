@@ -72,7 +72,7 @@ iframe { display: none; }
 audio { display: none; }
 </style>
 </head>
-<body><audio controls>
+<body><audio id="bgMusic">
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
@@ -93,9 +93,10 @@ const startBtn = document.getElementById('startBtn');
 const content = document.getElementById('content');
 const title = document.getElementById('title');
 const message = document.getElementById('message');
-const music = document.getElementById('music');
+const music = document.getElementById('bgMusic');
 
 startBtn.addEventListener('click', () => {
+  music.play();
   startBtn.style.display = 'none';
   content.style.display = 'block';
   
